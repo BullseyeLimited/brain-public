@@ -1,0 +1,33 @@
+{
+  "messages": {
+    "fan_last": [
+      {
+        "text": "hey babe \ud83d\ude0a what do you like?"
+      },
+      {
+        "text": "tomorrow I have a fishing trip tbh"
+      },
+      {
+        "text": "would you think of me?"
+      }
+    ],
+    "creator_last": [
+      {
+        "text": "mmm now I'm curious \ud83d\ude0f"
+      }
+    ]
+  },
+  "memory": {
+    "storybook": "we joked about tacos yesterday"
+  },
+  "profile": {
+    "fan_id": "u1",
+    "tier": "silver",
+    "relationship_age_days": 3
+  },
+  "budgets": {},
+  "context": {
+    "local_hour": 21,
+    "consecutive_no_reply": 0
+  }
+}
