@@ -1,0 +1,40 @@
+# brain/strategist/config/style_policies.yaml
+# Global style constraints + stage presets.
+cadence_allowed: [burst, steady]
+ask_rate_allowed: [low, med, high]
+emoji_budget_max: 2
+paragraph_options: [short, med, long]
+
+stage_presets:
+  Silver:
+    tone_sliders: { playful: 0.6, warm: 0.8, tease: 0.3, jealousy: 0.1 }
+    bubble_range: [1, 2]
+    para_default: short
+    mirroring: med
+    emoji_budget: [0, 1]
+    petname_policy: none_or_generic
+    roleplay_tolerance: 0.2
+  Gold:
+    tone_sliders: { playful: 0.7, warm: 0.7, tease: 0.5, jealousy: 0.2 }
+    bubble_range: [1, 3]
+    para_default: short
+    mirroring: med
+    emoji_budget: [0, 2]
+    petname_policy: light_custom
+    roleplay_tolerance: 0.4
+  Diamond:
+    tone_sliders: { playful: 0.6, warm: 0.9, tease: 0.6, jealousy: 0.3 }
+    bubble_range: [1, 3]
+    para_default: med
+    mirroring: high
+    emoji_budget: [0, 2]
+    petname_policy: custom
+    roleplay_tolerance: 0.6
+  Emerald:
+    tone_sliders: { playful: 0.5, warm: 1.0, tease: 0.6, jealousy: 0.2 }
+    bubble_range: [1, 3]
+    para_default: med
+    mirroring: high
+    emoji_budget: [0, 2]
+    petname_policy: intimate_custom
+    roleplay_tolerance: 0.8

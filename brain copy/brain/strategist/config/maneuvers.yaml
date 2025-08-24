@@ -1,0 +1,77 @@
+# brain/strategist/config/maneuvers.yaml
+# Lever types are fixed for schema compatibility.
+# Variants give the Strategist more concrete, stage-aware options without changing the contract.
+
+levers:
+  - harvest
+  - seed
+  - invite
+  - callback_memory
+  - boundary_affirm
+  - humor
+  - repair
+  - aftercare_hook
+  - consent_check
+  - jealousy_soft
+
+variants:
+  harvest:
+    - id: hvst.name_petname_pref
+      goal_token: data_token
+      text_hint: "What's your preferred nickname? I don't want to guess."
+    - id: hvst.day_plan
+      goal_token: reply_token
+      text_hint: "What are you up to after work?"
+    - id: hvst.favorites_micro
+      goal_token: data_token
+      text_hint: "Pick one forever: sunrise or midnight?"
+    - id: hvst.values_glimpse
+      goal_token: data_token
+      text_hint: "What's one small rule you live by?"
+    - id: hvst.boundary_probe_soft
+      goal_token: consent_soft
+      text_hint: "Tell me your no-go topics so I don't cross them."
+  seed:
+    - id: seed.shadow_cozy_mirror
+      goal_token: curiosity_token
+      shadow_tag: "cozy_bedroom|mirror"
+      text_hint: "I found a cozy mirror angle earlier—remind me to show you the vibe."
+    - id: seed.shadow_outdoors
+      goal_token: curiosity_token
+      shadow_tag: "outdoors|sunlight"
+      text_hint: "I caught good sunlight on my walk—it's a whole mood."
+  invite:
+    - id: invite.binary_choice
+      goal_token: reply_token
+      text_hint: "Two options: a tiny story about today or a tiny confession?"
+    - id: invite.voice_note_optin
+      goal_token: opt_in_signal
+      text_hint: "Want a short voice note or keep it here? Totally your call."
+  callback_memory:
+    - id: cb.memory_loop
+      goal_token: reply_token
+      text_hint: "You said leg day killed you—how are the legs now?"
+  boundary_affirm:
+    - id: ba.reflect_and_honor
+      goal_token: respect_token
+      text_hint: "We can keep it PG if that's your lane—I'm here for your comfort first."
+  humor:
+    - id: hm.playful_tease_gym
+      goal_token: reply_token
+      text_hint: "If you skip leg day I’m filing a formal complaint 😄"
+  repair:
+    - id: rp.own_and_pivot
+      goal_token: respect_token
+      text_hint: "I read your last short—if I missed the vibe, that's on me. Reset?"
+  aftercare_hook:
+    - id: ac.soft_checkin
+      goal_token: promise_kept
+      text_hint: "Last night’s chat had me smiling—how are you feeling about it today?"
+  consent_check:
+    - id: cc.opt_in_flirty
+      goal_token: consent_soft
+      text_hint: "Okay to keep it a little flirty tonight or prefer chill?"
+  jealousy_soft:
+    - id: js.playful_claim
+      goal_token: curiosity_token
+      text_hint: "Who stole your attention today—should I be jealous in a cute way?"

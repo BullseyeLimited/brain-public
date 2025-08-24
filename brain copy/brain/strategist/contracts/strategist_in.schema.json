@@ -1,0 +1,398 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "StrategistInput",
+  "type": "object",
+  "required": [
+    "thread_id",
+    "turn",
+    "scene_card",
+    "persona_pack",
+    "signals",
+    "goal_vector",
+    "compass_shadows",
+    "variety_window_signatures",
+    "policy",
+    "priors"
+  ],
+  "properties": {
+    "thread_id": {
+      "type": "string"
+    },
+    "turn": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "scene_card": {
+      "type": "object",
+      "required": [
+        "topics_snapshot",
+        "warmth",
+        "curiosity",
+        "sentiment_delta",
+        "tier",
+        "style_fingerprint",
+        "rails"
+      ],
+      "properties": {
+        "topics_snapshot": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "warmth": {
+          "type": "number"
+        },
+        "curiosity": {
+          "type": "number"
+        },
+        "sentiment_delta": {
+          "type": "number"
+        },
+        "tier": {
+          "type": "string"
+        },
+        "relationship_stage": {
+          "type": "string",
+          "enum": [
+            "Silver",
+            "Gold",
+            "Diamond",
+            "Emerald"
+          ]
+        },
+        "intimacy_index": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "trust_index": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "aftercare_need": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "sexting_consent_state": {
+          "type": "string",
+          "enum": [
+            "none",
+            "invited",
+            "ongoing",
+            "paused"
+          ]
+        },
+        "roleplay_tolerance": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "style_fingerprint": {
+          "type": "object",
+          "required": [
+            "avg_chars",
+            "question_rate",
+            "emoji_tolerance",
+            "burstiness"
+          ],
+          "properties": {
+            "avg_chars": {
+              "type": "number"
+            },
+            "question_rate": {
+              "type": "number"
+            },
+            "emoji_tolerance": {
+              "type": "string",
+              "enum": [
+                "low",
+                "medium",
+                "high"
+              ]
+            },
+            "burstiness": {
+              "type": "string",
+              "enum": [
+                "low",
+                "medium",
+                "high"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "rails": {
+          "type": "object",
+          "required": [
+            "turns_since_offer",
+            "offers_last_10",
+            "turns_since_rejection"
+          ],
+          "properties": {
+            "turns_since_offer": {
+              "type": "integer"
+            },
+            "offers_last_10": {
+              "type": "integer"
+            },
+            "turns_since_rejection": {
+              "type": "integer"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "persona_pack": {
+      "type": "object",
+      "required": [
+        "tone_sliders",
+        "petnames",
+        "emoji_budget",
+        "jealousy_tolerance"
+      ],
+      "properties": {
+        "tone_sliders": {
+          "type": "object"
+        },
+        "petnames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "emoji_budget": {
+          "type": "object",
+          "required": [
+            "min",
+            "max"
+          ],
+          "properties": {
+            "min": {
+              "type": "integer"
+            },
+            "max": {
+              "type": "integer"
+            }
+          }
+        },
+        "jealousy_tolerance": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "signals": {
+      "type": "object",
+      "required": [
+        "reply_urgency",
+        "price_readiness",
+        "curiosity_cue",
+        "interruption",
+        "cooldown_pressure",
+        "novelty_budget",
+        "boundary_tone"
+      ],
+      "properties": {
+        "reply_urgency": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "price_readiness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "curiosity_cue": {
+          "type": "boolean"
+        },
+        "interruption": {
+          "type": "boolean"
+        },
+        "cooldown_pressure": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "novelty_budget": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "boundary_tone": {
+          "type": "string",
+          "enum": [
+            "none",
+            "soft",
+            "hard"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "goal_vector": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "compass_shadows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "shadow_id",
+          "tags",
+          "safety_grade"
+        ],
+        "properties": {
+          "shadow_id": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "safety_grade": {
+            "type": "string",
+            "enum": [
+              "SFW",
+              "suggestive"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "variety_window_signatures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "policy": {
+      "type": "object",
+      "required": [
+        "allowed_missions",
+        "allowed_levers",
+        "gating_flags",
+        "tier_budgets"
+      ],
+      "properties": {
+        "allowed_missions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "allowed_levers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "gating_flags": {
+          "type": "object",
+          "required": [
+            "no_explicit",
+            "writer_blind_to_price",
+            "respect_boundaries"
+          ],
+          "properties": {
+            "no_explicit": {
+              "type": "boolean"
+            },
+            "writer_blind_to_price": {
+              "type": "boolean"
+            },
+            "respect_boundaries": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "tier_budgets": {
+          "type": "object",
+          "required": [
+            "vulnerability",
+            "jealousy",
+            "intimacy"
+          ],
+          "properties": {
+            "vulnerability": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "jealousy": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "intimacy": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "priors": {
+      "type": "object",
+      "required": [
+        "mission_prior",
+        "maneuver_prior",
+        "delivery_prior",
+        "exploration"
+      ],
+      "properties": {
+        "mission_prior": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "maneuver_prior": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "delivery_prior": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "exploration": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

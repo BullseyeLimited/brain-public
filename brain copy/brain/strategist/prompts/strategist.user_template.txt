@@ -1,0 +1,5 @@
+INPUT_JSON:
+{{INPUT_JSON}}
+
+TASK:
+Produce StrategistOut JSON only.

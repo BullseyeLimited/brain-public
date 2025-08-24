@@ -1,0 +1,21 @@
+# brain/strategist/config/missions.yaml
+# Keep legacy mission names for compatibility; add richer stage-aware missions.
+- onboarding_first_impression      # Silver
+- discovery_surface                # Silver
+- discovery_personal               # Silver/Gold
+- bond                             # all
+- playful_flirt                    # Silver/Gold
+- tease_soft                       # Gold
+- tension_build                    # Gold
+- consent_seed                     # Silver/Gold
+- sexting_suggestive               # Gold/Diamond (tasteful, non-explicit)
+- sexting_aftercare                # Gold/Diamond
+- roleplay_light                   # Diamond+
+- vulnerability_share              # Diamond+
+- long_form_deepen                 # Diamond/Emerald
+- jealousy_soft                    # Gold/Diamond (playful, non-accusatory)
+- aftercare                        # all
+- repair                           # all
+- reengage                         # all
+- prime_for_offer                  # context-driven
+- post_offer_value                 # after PPV regardless of outcome

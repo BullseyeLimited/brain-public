@@ -1,0 +1,98 @@
+# brain/strategist/config/stages.yaml
+# Stage = your relationship arc; use to bias missions/levers and set budgets.
+# These are *planning* presets; safety still caps intimacy via policy.gating_flags.
+
+Silver:
+  description: "first contact → getting to know; playful + warm; establish consent style"
+  mission_prior:
+    onboarding_first_impression: 0.3
+    discovery_surface: 0.25
+    bond: 0.2
+    playful_flirt: 0.15
+    consent_seed: 0.1
+  lever_bias:
+    harvest: 0.4
+    callback_memory: 0.2
+    invite: 0.2
+    seed: 0.1
+    consent_check: 0.1
+  budgets:
+    vulnerability: 0.3
+    intimacy: 0.2
+    jealousy: 0.1
+    ask_rate: low
+    exploration: 0.5
+
+Gold:
+  description: "mutual tension; flirty; one successful paid moment likely; escalate *with consent*"
+  mission_prior:
+    discovery_personal: 0.2
+    playful_flirt: 0.2
+    tease_soft: 0.2
+    tension_build: 0.15
+    consent_seed: 0.1
+    prime_for_offer: 0.15
+  lever_bias:
+    seed: 0.25
+    invite: 0.25
+    harvest: 0.2
+    consent_check: 0.15
+    callback_memory: 0.15
+  budgets:
+    vulnerability: 0.5
+    intimacy: 0.4
+    jealousy: 0.2
+    ask_rate: med
+    exploration: 0.4
+
+Diamond:
+  description: "girlfriend energy; deeper share; aftercare and long-form moments"
+  mission_prior:
+    bond: 0.2
+    vulnerability_share: 0.2
+    long_form_deepen: 0.2
+    sexting_suggestive: 0.15
+    sexting_aftercare: 0.1
+    aftercare: 0.15
+  lever_bias:
+    callback_memory: 0.25
+    harvest: 0.2
+    invite: 0.2
+    aftercare_hook: 0.2
+    consent_check: 0.15
+  budgets:
+    vulnerability: 0.7
+    intimacy: 0.6
+    jealousy: 0.3
+    ask_rate: low
+    exploration: 0.3
+
+Emerald:
+  description: "deep commitment energy; maintenance of trust; experiments only by opt-in"
+  mission_prior:
+    long_form_deepen: 0.25
+    bond: 0.2
+    aftercare: 0.2
+    roleplay_light: 0.15
+    jealousy_soft: 0.05
+    post_offer_value: 0.15
+  lever_bias:
+    callback_memory: 0.25
+    humor: 0.15
+    invite: 0.2
+    aftercare_hook: 0.25
+    consent_check: 0.15
+  budgets:
+    vulnerability: 0.9
+    intimacy: 0.8
+    jealousy: 0.2
+    ask_rate: low
+    exploration: 0.25
+
+progression_rules:
+  to_Gold:
+    requires: ["opt_in_signal | consent_soft >= 2 in last 5 turns"]
+  to_Diamond:
+    requires: ["paid_token >= 1 in last 20 turns", "promise_kept >= 1"]
+  to_Emerald:
+    requires: ["streak >= 5 engaged turns", "no boundary_missed last 20"]

@@ -1,0 +1,26 @@
+{
+  "thread_id": "thr_demo",
+  "turn": 12,
+  "scene_card": {
+    "topics_snapshot": ["gym", "weekend"],
+    "warmth": 0.62,
+    "curiosity": 0.48,
+    "sentiment_delta": 0.12,
+    "tier": "Silver",
+    "relationship_stage": "Silver",
+    "style_fingerprint": { "avg_chars": 110, "question_rate": 0.3, "emoji_tolerance": "medium", "burstiness": "high" },
+    "rails": { "turns_since_offer": 5, "offers_last_10": 2, "turns_since_rejection": 7 }
+  },
+  "persona_pack": { "tone_sliders": { "playful": 0.6, "warm": 0.8, "tease": 0.4, "jealousy": 0.2 }, "petnames": ["you","handsome"], "emoji_budget": { "min": 0, "max": 2 }, "jealousy_tolerance": "low" },
+  "signals": { "reply_urgency": "medium", "price_readiness": 0.35, "curiosity_cue": true, "interruption": false, "cooldown_pressure": "low", "novelty_budget": 0.6, "boundary_tone": "none" },
+  "goal_vector": { "bond": 0.25, "trust": 0.2, "data": 0.15, "curiosity": 0.15, "consent": 0.15, "opt_in": 0.2, "paid": 0.25, "novelty": 0.1, "safety": 0.4, "promises": 0.2 },
+  "compass_shadows": [{ "shadow_id": "sha_black_lace_mirror", "tags": ["mirror","black_lace","cozy_bedroom"], "safety_grade": "suggestive" }],
+  "variety_window_signatures": ["tease:mirror:glance"],
+  "policy": {
+    "allowed_missions": ["onboarding_first_impression","discovery_surface","discovery_personal","bond","playful_flirt","tease_soft","tension_build","consent_seed","sexting_suggestive","sexting_aftercare","roleplay_light","vulnerability_share","long_form_deepen","jealousy_soft","aftercare","repair","reengage","prime_for_offer","post_offer_value"],
+    "allowed_levers": ["harvest","seed","invite","callback_memory","boundary_affirm","humor","repair","aftercare_hook","consent_check","jealousy_soft"],
+    "gating_flags": { "no_explicit": true, "writer_blind_to_price": true, "respect_boundaries": true },
+    "tier_budgets": { "vulnerability": 0.4, "jealousy": 0.3, "intimacy": 0.3 }
+  },
+  "priors": { "mission_prior": { "bond": 0.4, "tease_soft": 0.2, "discovery_surface": 0.2, "prime_for_offer": 0.2 }, "maneuver_prior": { "callback_memory": 0.4 }, "delivery_prior": { "para:short": 0.5 }, "exploration": 0.2 }
+}

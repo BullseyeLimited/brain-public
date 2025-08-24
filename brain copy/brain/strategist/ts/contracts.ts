@@ -1,0 +1,21 @@
+// brain/strategist/ts/contracts.ts
+export type Mission =
+  | "onboarding_first_impression"
+  | "discovery_surface"
+  | "discovery_personal"
+  | "bond"
+  | "playful_flirt"
+  | "tease_soft"
+  | "tension_build"
+  | "consent_seed"
+  | "sexting_suggestive"
+  | "sexting_aftercare"
+  | "roleplay_light"
+  | "vulnerability_share"
+  | "long_form_deepen"
+  | "jealousy_soft"
+  | "aftercare"
+  | "repair"
+  | "reengage"
+  | "prime_for_offer"
+  | "post_offer_value";

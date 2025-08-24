@@ -1,0 +1,271 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "StrategistOut",
+  "type": "object",
+  "required": [
+    "plan_version",
+    "mission",
+    "angle",
+    "talk_about",
+    "theme_tags",
+    "delivery",
+    "convo_levers",
+    "sell_intent",
+    "shadow_hints",
+    "safety_constraints",
+    "novelty_signature",
+    "guaranteed_tokens",
+    "invariants"
+  ],
+  "properties": {
+    "plan_version": {
+      "type": "string"
+    },
+    "mission": {
+      "type": "string",
+      "enum": [
+        "onboarding_first_impression",
+        "discovery_surface",
+        "discovery_personal",
+        "bond",
+        "playful_flirt",
+        "tease_soft",
+        "tension_build",
+        "consent_seed",
+        "sexting_suggestive",
+        "sexting_aftercare",
+        "roleplay_light",
+        "vulnerability_share",
+        "long_form_deepen",
+        "jealousy_soft",
+        "aftercare",
+        "repair",
+        "reengage",
+        "prime_for_offer",
+        "post_offer_value"
+      ]
+    },
+    "angle": {
+      "type": "string",
+      "maxLength": 140
+    },
+    "talk_about": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "type": "string"
+      }
+    },
+    "theme_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "delivery": {
+      "type": "object",
+      "required": [
+        "bubbles",
+        "para",
+        "mirroring",
+        "emoji_budget",
+        "cadence",
+        "ask_rate"
+      ],
+      "properties": {
+        "bubbles": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "para": {
+          "type": "string",
+          "enum": [
+            "short",
+            "med",
+            "long"
+          ]
+        },
+        "mirroring": {
+          "type": "string",
+          "enum": [
+            "low",
+            "med",
+            "high"
+          ]
+        },
+        "emoji_budget": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "cadence": {
+          "type": "string",
+          "enum": [
+            "burst",
+            "steady"
+          ]
+        },
+        "ask_rate": {
+          "type": "string",
+          "enum": [
+            "low",
+            "med",
+            "high"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "convo_levers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "text",
+          "goal_token"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "harvest",
+              "seed",
+              "invite",
+              "callback_memory",
+              "boundary_affirm",
+              "humor",
+              "repair",
+              "aftercare_hook",
+              "consent_check",
+              "jealousy_soft"
+            ]
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "goal_token": {
+            "type": "string",
+            "enum": [
+              "reply_token",
+              "data_token",
+              "curiosity_token",
+              "consent_soft",
+              "respect_token",
+              "opt_in_signal",
+              "novelty_token",
+              "promise_kept"
+            ]
+          },
+          "shadow_id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "micro_script": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        "on_direct_answer": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "on_short_reply": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "on_boundary": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "sell_intent": {
+      "type": "boolean"
+    },
+    "shadow_hints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safety_constraints": {
+      "type": "object",
+      "required": [
+        "no_explicit",
+        "respect_boundaries",
+        "jealousy_cap",
+        "vulnerability_cap",
+        "intimacy_cap"
+      ],
+      "properties": {
+        "no_explicit": {
+          "type": "boolean"
+        },
+        "respect_boundaries": {
+          "type": "boolean"
+        },
+        "jealousy_cap": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "vulnerability_cap": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "intimacy_cap": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "novelty_signature": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "guaranteed_tokens": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "invariants": {
+      "type": "object",
+      "required": [
+        "writer_blind_to_price",
+        "no_time_promises"
+      ],
+      "properties": {
+        "writer_blind_to_price": {
+          "type": "boolean"
+        },
+        "no_time_promises": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "why": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

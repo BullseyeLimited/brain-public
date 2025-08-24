@@ -1,0 +1,14 @@
+# brain/strategist/config/novelty.yaml
+signature_window: 30          # turns to track novelty
+semantic_tau: 0.26            # lower = stricter freshness
+angle_ngram_window: 24        # blocks phrase repeats within this many turns
+repeat_penalty:
+  angle_signature: 1.0
+  ngram: 0.6
+  topic: 0.4
+topic_repeat_budget:
+  gym: 3
+  work: 3
+  weekend: 2
+  compliments: 2
+signature_fields: ["mission","angle","theme_tags"]
